@@ -66,8 +66,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Sobre a Empresa</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>{{ $about->title }}</h2>
+                    <p class="lead">{{ $about->description }}</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -93,42 +93,20 @@
                     <h2>Serviços</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        @foreach($services as $key => $service)
+                          <div class="col-md-4 col-sm-6">
                             <div class="service-item">
-                                <span class="fa-stack fa-4x">
+                              <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-motorcycle fa-stack-1x text-white"></i>
-                            </span>
-                                <h4>
-                                    <strong>Entrega</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipisicing elit.</p>
+                                <i class="fa {{ $service->icon }} fa-stack-1x text-white"></i>
+                              </span>
+                              <h4>
+                                <strong>{{ $service->name }}</strong>
+                              </h4>
+                              <p>{{ $service->description }}</p>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-send fa-stack-1x text-white"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-bank fa-stack-1x text-white"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
+                          </div>
+                        @endforeach
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -156,12 +134,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Mototáxi Maringá</strong>
                     </h4>
-                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <p>{{ $contact->address }}<br>{{ $contact->city }}, {{ $contact->stte }} {{ $contact->postal_code }}</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> {{ $contact->telephone }}</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
                         </li>
                     </ul>
                     <br>

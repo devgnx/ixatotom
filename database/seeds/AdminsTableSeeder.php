@@ -10,8 +10,8 @@ class AdminsTableSeeder extends Seeder
         DB::table('admins')->delete();
         App\Admin::create([
             'name' => 'Admin',
-            'email' => 'admin@teste.com',
-            'password' => Hash::make('test')
+            'email' => 'admin@teste.com.br',
+            'password' => Hash::make('teste')
         ]);
     }
 }

@@ -21,33 +21,48 @@ Route::group([
         ]);
 
         Route::get('sobre', [
-            'as' => 'about',
+            'as' => 'about:edit',
             'uses' => 'AboutController@edit'
         ]);
 
+        Route::post('sobre', [
+            'as' => 'about:save',
+            'uses' => 'AboutController@save'
+        ]);
+
         Route::get('servicos', [
-            'as' => 'services',
+            'as' => 'service:list',
             'uses' => 'ServicesController@index'
         ]);
 
         Route::get('servico/novo', [
-            'as' => 'serviceCreate',
+            'as' => 'service:create',
             'uses' => 'ServicesController@create'
         ]);
 
         Route::get('servico/{id}', [
-            'as' => 'serviceEdit',
+            'as' => 'service:edit',
             'uses' => 'ServicesController@edit'
         ]);
 
+        Route::post('servico/salvar/{id?}', [
+            'as' => 'service:save',
+            'uses' => 'ServicesController@save'
+        ]);
+
         Route::get('servico/remover/{id}', [
-            'as' => 'serviceDelete',
+            'as' => 'service:delete',
             'uses' => 'ServicesController@delete'
         ]);
 
         Route::get('contato', [
-            'as' => 'contact',
+            'as' => 'contact:edit',
             'uses' => 'ContactController@edit'
+        ]);
+
+        Route::post('contato', [
+            'as' => 'contact:save',
+            'uses' => 'ContactController@save'
         ]);
     });
 });

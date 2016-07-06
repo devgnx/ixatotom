@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Trait;
+namespace App\Http\Controllers\Traits;
 
 
 trait LayoutResolver

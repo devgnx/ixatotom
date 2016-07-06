@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Traits\LayoutResolver;
 
 class AdminController extends Controller
 {
-    use Trait\LayoutResolver;
+    use LayoutResolver;
 
-    protected $page = 'services';
+    protected $page  = 'services';
     protected $title = 'Serviços';
-    protected $data = [];
+    protected $data  = [];
 
     public function login()
     {
         if (Auth::check()) {
-          return redirect()->route('admin::services');
+          return redirect()->route('admin::service:list');
         } else {
           return view('admin.login');
         }
@@ -25,9 +26,11 @@ class AdminController extends Controller
     public function auth(Request $request)
     {
         if (Auth::check()) {
-          return redirect()->route('admin::services');
+            return redirect()->route('admin::service:list');
+
         } else if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->input('remember'))) {
-            return redirect()->intended('admin::services');
+            return redirect()->intended('admin::service:list');
+
         } else {
             return redirect()->back()->with('errors', ['Email e/ou senha inválidos!']);
         }

@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Http\Controllers\Traits\LayoutResolver;
 
 class AboutController extends Controller
 {
-    use Trait\LayoutResolver;
+    use LayoutResolver;
 
-    protected $page = 'services';
-    protected $title = 'Serviços';
-    protected $data = [];
-  
+    protected $page  = 'about';
+    protected $title = 'Sobre a Empresa';
+    protected $data  = [];
+
     public function edit()
     {
-        return view('admin.about.form');
+        $this->data['about'] = About::first();
+        return view('admin.about.form', $this->data);
+    }
+
+    public function save(Request $request)
+    {
+        $about = About::firstOrNew(['id' => 1]);
+        $about->title = $request->input('title');
+        $about->description = $request->input('description');
+
+        if ($about->save()) {
+          return redirect()->route('admin::about:edit')->with('success', ["Dados salvos com sucesso!"]);
+        }
     }
 }
