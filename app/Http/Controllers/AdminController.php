@@ -12,7 +12,6 @@ class AdminController extends Controller
 
     protected $page  = 'services';
     protected $title = 'Serviços';
-    protected $data  = [];
 
     public function login()
     {

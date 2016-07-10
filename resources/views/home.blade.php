@@ -55,7 +55,8 @@
     <header id="home" class="header">
         <div class="text-vertical-center">
             <h1>MOTOTÁXI MARINGÁ</h1>
-            <!-- <h3> &amp; Templates</h3> -->
+            <hr class="small">
+            <h2>{{ $contact->telephone }}</h2>
             <br>
             <a href="#servicos" class="btn btn-dark btn-lg">Serviços</a>
         </div>
@@ -128,8 +129,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Mototáxi Maringá</strong>
-                    </h4>
+                    <h4><strong>Mototáxi Maringá</strong></h4>
                     <p>{{ $contact->address or null }}<br>{{ $contact->city or null }}, {{ $contact->site or null }} {{ $contact->postal_code or null }}</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> {{ $contact->telephone or null }}</li>
@@ -137,7 +137,6 @@
                         </li>
                     </ul>
                     <br>
-                    <hr class="small">
                 </div>
             </div>
         </div>

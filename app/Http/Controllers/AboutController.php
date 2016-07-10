@@ -12,12 +12,11 @@ class AboutController extends Controller
 
     protected $page  = 'about';
     protected $title = 'Sobre a Empresa';
-    protected $data  = [];
 
     public function edit()
     {
-        $this->data['about'] = About::first();
-        return view('admin.about.form', $this->data);
+        $this->viewAttributes['about'] = About::first();
+        return view('admin.about.form', $this->viewAttributes);
     }
 
     public function save(Request $request)

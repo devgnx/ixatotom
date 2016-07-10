@@ -12,12 +12,11 @@ class ContactController extends Controller
 
     protected $page  = 'contact';
     protected $title = 'Dados de Contato';
-    protected $data  = [];
 
     public function edit()
     {
-        $this->data['contact'] = Contact::first();
-        return view('admin.contact.form', $this->data);
+        $this->viewAttributes['contact'] = Contact::first();
+        return view('admin.contact.form', $this->viewAttributes);
     }
 
     public function save(Request $request)

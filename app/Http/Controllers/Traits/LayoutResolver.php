@@ -5,21 +5,21 @@ namespace App\Http\Controllers\Traits;
 
 trait LayoutResolver
 {
-    protected $data;
+    protected $viewAttributes = [];
 
     public function __construct()
     {
-        $this->data['page'] = array(
+        $this->viewAttributes['page'] = array(
             'title' => null,
             'name' => null,
         );
 
         if (!empty($this->title)) {
-            $this->data['page']['title'] = $this->title;
+            $this->viewAttributes['page']['title'] = $this->title;
         }
 
         if (!empty($this->page)) {
-          $this->data['page']['name'] = $this->page;
+          $this->viewAttributes['page']['name'] = $this->page;
         }
     }
 }

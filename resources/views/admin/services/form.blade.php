@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('head')
-  <link rel="stylesheet" href="/css/bootstrap-iconpicker.min.css" media="screen">
+  <link rel="stylesheet" href="{{ asset('/css/bootstrap-iconpicker.min.css') }}" media="screen">
 @endsection
 
 @section('content')
@@ -41,7 +41,7 @@
 @endsection
 
 @section('scripts')
-  <script src="/js/iconset-fontawesome-4.3.0.min.js"></script>
-  <script src="/js/bootstrap-iconpicker.min.js"></script>
-  <script src="/js/services.js"></script>
+  <script src="{{ asset('/js/iconset-fontawesome-4.3.0.min.js') }}"></script>
+  <script src="{{ asset('/js/bootstrap-iconpicker.min.js') }}"></script>
+  <script src="{{ asset('/js/services.js') }}"></script>
 @endsection

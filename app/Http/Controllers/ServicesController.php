@@ -12,17 +12,16 @@ class ServicesController extends Controller
 
     protected $page  = 'services';
     protected $title = 'Serviços';
-    protected $data  = [];
 
     public function index(Request $request)
     {
-        $this->data['services'] = Service::all();
+        $this->viewAttributes['services'] = Service::all();
 
-        if ($this->data['services']->count() >= 3) {
+        if ($this->viewAttributes['services']->count() >= 3) {
             $request->session()->flash('warning', ["Limite de cadastros atingido!"]);
         }
 
-        return view('admin.services.list', $this->data);
+        return view('admin.services.list', $this->viewAttributes);
     }
 
     public function create(Request $request)
@@ -30,7 +29,7 @@ class ServicesController extends Controller
         $request->session()->forget('warning');
 
         if (Service::count() < 3) {
-            return view('admin.services.form', $this->data);
+            return view('admin.services.form', $this->viewAttributes);
         } else {
             return redirect()->route('admin::service:list');
         }
@@ -40,8 +39,8 @@ class ServicesController extends Controller
     {
         $request->session()->forget('warning');
 
-        $this->data['service'] = Service::findOrFail($request->route('id'));
-        return view('admin.services.form', $this->data);
+        $this->viewAttributes['service'] = Service::findOrFail($request->route('id'));
+        return view('admin.services.form', $this->viewAttributes);
     }
 
     public function save(Request $request)
