@@ -54,7 +54,7 @@
     <!-- Header -->
     <header id="home" class="header">
         <div class="text-vertical-center">
-            <img src="../img/moto.png" alt="Mountain View" style="width:500px;height:228px;">
+            <h1>MOTOTÁXI MARINGÁ</h1>
             <!-- <h3> &amp; Templates</h3> -->
             <br>
             <a href="#servicos" class="btn btn-dark btn-lg">Serviços</a>
@@ -93,7 +93,7 @@
                     <hr class="small">
                     <div class="row">
                         @foreach($services as $key => $service)
-                          <div class="col-md-3 col-sm-6">
+                          <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                               <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>

@@ -17,3 +17,8 @@ Route::get('contato/', [
         return view('contato');
     }
 ]);
+
+Route::post('contato/enviar', [
+    'as' => "contact:send",
+    'uses' => "HomeController@sendMail"
+]);
