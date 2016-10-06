@@ -6,7 +6,7 @@
     <hr>
     <div class="row">
       <div class="col-xs-12 text-right">
-        @if ($services->count() < 3)
+        @if ($services->count() < 4)
           <a href="{{ route('admin::service:create') }}" class="btn btn-primary">Criar novo serviço</a>
         @endif
       </div>

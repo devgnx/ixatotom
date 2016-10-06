@@ -54,9 +54,8 @@
     <!-- Header -->
     <header id="home" class="header">
         <div class="text-vertical-center">
-            <h1>MOTOTÁXI MARINGÁ</h1>
-            <hr class="small">
-            <h2>{{ $contact->telephone }}</h2>
+            <img src="../img/moto.png" alt="Mountain View" style="width:500px;height:228px;">
+            <!-- <h3> &amp; Templates</h3> -->
             <br>
             <a href="#servicos" class="btn btn-dark btn-lg">Serviços</a>
         </div>
@@ -94,7 +93,7 @@
                     <hr class="small">
                     <div class="row">
                         @foreach($services as $key => $service)
-                          <div class="col-md-4 col-sm-6">
+                          <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                               <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -120,23 +119,45 @@
 
 
     <!-- Map -->
-    <section id="contato" class="map">
+    <section id="mapa" class="map bg-yellow">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.9618549088686!2d-51.91311068534087!3d-23.425745062482495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI1JzMyLjciUyA1McKwNTQnMzkuMyJX!5e0!3m2!1spt-BR!2sbr!4v1467844789854" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section>
 
+
+
     <!-- Footer -->
-    <footer class="bg-yellow">
+    <footer id="contato" class="bg-yellow contact-form">
         <div class="container">
-            <div class="row">
+            <form class="front" action="{{ route('contact:send') }}" method="post">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Rogério Dantas">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email"type="email" class="form-control" id="email" placeholder="petergriffin1945@exemlo.com.br">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea name="message" id="message" class="form-control" placeholder="Envie sua mensagem"></textarea>
+                </div>
+                <div class="container">
+                    <div class="col-xs-12">
+                        <button type="submit" class="btn btn-default pull-right">Enviar</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row" class="back" style="margin-top: -50px;">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Mototáxi Maringá</strong></h4>
+                    <h4><strong>Mototáxi Maringá</strong>
+                    </h4>
                     <p>{{ $contact->address or null }}<br>{{ $contact->city or null }}, {{ $contact->site or null }} {{ $contact->postal_code or null }}</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> {{ $contact->telephone or null }}</li>
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:{{ $contact->email or null }}">{{ $contact->email or null }}</a>
                         </li>
                     </ul>
-                    <br>
                 </div>
             </div>
         </div>

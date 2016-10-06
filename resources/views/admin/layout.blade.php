@@ -10,14 +10,14 @@
     <title>{{ !empty($page['title']) ? $page['title'] : 'Admin - MOTOTÁXI MARINGÁ' }}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/css/bootstrap-iconpicker.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap-iconpicker.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,10 +105,10 @@
   </div>
 
   <!-- jQuery -->
-  <script src="{{ asset('/js/jquery.js') }}"></script>
+  <script src="/js/jquery.js"></script>
 
   <!-- Bootstrap Core JavaScript -->
-  <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
   @yield('scripts')
 </body>
