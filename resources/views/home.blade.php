@@ -7,17 +7,18 @@
     <meta name="description" content="">
     <meta name="author" content="Highlander Bros.">
 
-    <title>MOTOTÁXI MARINGÁ</title>
+    <title>2 IRMÃOS SNOOKER BAR</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Marck+Script|Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +35,7 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#home"  onclick = $("#menu-close").click(); ><i class="fa fa-motorcycle"></i><i class="fa fa-envira"></i></a>
+                <a href="#home"  onclick = $("#menu-close").click(); > 2 IRMÃOS</a>
             </li>
             <li>
                 <a href="#home" onclick = $("#menu-close").click(); >Home</a>
@@ -54,38 +55,18 @@
     <!-- Header -->
     <header id="home" class="header">
         <div class="text-vertical-center">
-            <h1>MOTOTÁXI MARINGÁ</h1>
+            <h2 class="header-subtitle">SNOOKER BAR</h2>
+            <h1 class="header-title">2 Irmãos</h1>
+            <h2 class="header-subtitle">Bar e petiscaria</h2>
             <!-- <h3> &amp; Templates</h3> -->
             <br>
             <a href="#servicos" class="btn btn-dark btn-lg">Serviços</a>
         </div>
     </header>
 
-    <!-- About -->
-    <section id="sobre" class="about bg-yellow">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>{{ $about->title or null }}</h2>
-                    <p class="lead">{{ $about->description or null }}</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-        </div>
-    </aside>
-
-
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="servicos" class="services bg-yellow">
+    <section id="servicos" class="services bg-blue">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -97,7 +78,7 @@
                             <div class="service-item">
                               <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa {{ $service->icon or null }} fa-stack-1x text-white"></i>
+                                <i class="fa {{ $service->icon or null }} fa-stack-1x"></i>
                               </span>
                               <h4>
                                 <strong>{{ $service->name or null }}</strong>
@@ -116,17 +97,33 @@
         <!-- /.container -->
     </section>
 
-
+    <!-- About -->
+    <section id="sobre" class="about bg-brown">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ $about->title or null }}</h2>
+                    <p class="lead">{{ $about->description or null }}</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
     <!-- Map -->
-    <section id="mapa" class="map bg-yellow">
+    <section id="mapa" class="map bg-blue">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.9618549088686!2d-51.91311068534087!3d-23.425745062482495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI1JzMyLjciUyA1McKwNTQnMzkuMyJX!5e0!3m2!1spt-BR!2sbr!4v1467844789854" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
     </section>
 
-
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+        </div>
+    </aside>
 
     <!-- Footer -->
-    <footer id="contato" class="bg-yellow contact-form">
+    <footer id="contato" class="bg-brown contact-form">
         <div class="container">
             <form class="front" action="{{ route('contact:send') }}" method="post">
                 {{ csrf_field() }}
